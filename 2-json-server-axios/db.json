@@ -1,0 +1,76 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Sabah yürüyüşüne çık",
+      "category": "spor",
+      "date": 1734902400000
+    },
+    {
+      "id": 2,
+      "title": "Market alışverişi yap",
+      "category": "alışveriş",
+      "date": 1734988800000
+    },
+    {
+      "id": 3,
+      "title": "Yeni JavaScript dersini izle",
+      "category": "öğrenme",
+      "date": 1735075200000
+    },
+    {
+      "id": 4,
+      "title": "Kahve molasında arkadaşla sohbet et",
+      "category": "sosyal",
+      "date": 1735161600000
+    },
+    {
+      "id": 5,
+      "title": "Günlük notlarını yaz",
+      "category": "günlük",
+      "date": 1735248000000
+    },
+    {
+      "id": 6,
+      "title": "Online alışveriş sepetini kontrol et",
+      "category": "alışveriş",
+      "date": 1735334400000
+    },
+    {
+      "id": 7,
+      "title": "Yeni egzersiz programını dene",
+      "category": "spor",
+      "date": 1735420800000
+    },
+    {
+      "id": 8,
+      "title": "Kütüphanede ders çalış",
+      "category": "öğrenme",
+      "date": 1735507200000
+    },
+    {
+      "id": 9,
+      "title": "Aileyle akşam yemeği planla",
+      "category": "sosyal",
+      "date": 1735593600000
+    },
+    {
+      "id": 10,
+      "title": "Yeni haftalık hedeflerini belirle",
+      "category": "günlük",
+      "date": 1735680000000
+    },
+    {
+      "title": "JS öğren",
+      "category": "iş",
+      "date": 1761251316506,
+      "id": 11
+    },
+    {
+      "title": "TS öğren 12345",
+      "category": "sosyal",
+      "date": 1761678972607,
+      "id": 12
+    }
+  ]
+}
