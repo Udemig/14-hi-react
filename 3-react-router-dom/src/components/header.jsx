@@ -15,6 +15,9 @@ const Header = () => {
           <NavLink to="/ürünler" className="btn btn-outline-light">
             Ürünler
           </NavLink>
+          <NavLink to="/kategori/hikaye" className="btn btn-outline-light">
+            Kategori
+          </NavLink>
         </nav>
       </div>
     </nav>

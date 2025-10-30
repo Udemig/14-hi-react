@@ -1,26 +1,37 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/home";
 import Products from "./pages/products";
-import Header from "./components/header";
-import Footer from "./components/footer";
+import Detail from "./pages/detail";
+import NotFound from "./pages/not-found";
+import Novel from "./pages/novel";
+import Story from "./pages/story";
+import Layout from "./components/layout";
+import Wrapper from "./components/wrapper";
+
+// projedeki route'ları tanımla
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Wrapper />,
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "/ürünler", element: <Products /> },
+      { path: "/ürün/:id", element: <Detail /> },
+      {
+        path: "/kategori",
+        element: <Layout />,
+        children: [
+          { path: "roman", element: <Novel /> },
+          { path: "hikaye", element: <Story /> },
+        ],
+      },
+      { path: "*", element: <NotFound /> },
+    ],
+  },
+]);
 
 const App = () => {
-  return (
-    <BrowserRouter>
-      <div className="page">
-        <Header />
-
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/ürünler" element={<Products />} />
-          </Routes>
-        </main>
-
-        <Footer />
-      </div>
-    </BrowserRouter>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;
