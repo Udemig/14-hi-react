@@ -21,3 +21,11 @@
 - `VITE_DEĞİŞKEN_İSMİ=değişkenin_değeri`
 - .env dosyasında sadece string değerler tanımlanabilir
 - Proje içerisinde bu değişkenlere erişmek için `import.meta.env.DEĞİŞKEN_İSMİ` yöntemini kullanırız.
+
+# Guide
+
+- Projeyi çalıştırmak için öncelikle .env.example dosyasında belirtilen ortam değişkenlerini tanımla
+
+- npm i ile bağımlıkları indir
+
+- npm run dev ile projeyi ayağa kaldır
