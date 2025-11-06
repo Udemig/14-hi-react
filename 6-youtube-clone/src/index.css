@@ -31,3 +31,18 @@
     @apply p-2 hover:bg-zinc-700 transition rounded-full text-xl;
   }
 }
+
+/* Scrollbar'ları stillendir */
+*::-webkit-scrollbar {
+  background: #0f0f0f;
+  width: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #3f3f3f;
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #5b5b5b;
+}
