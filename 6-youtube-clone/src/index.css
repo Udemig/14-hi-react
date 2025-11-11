@@ -23,6 +23,10 @@
   body {
     @apply bg-black text-white;
   }
+
+  .page {
+    @apply h-[calc(100vh-56px)] w-full flex-1 py-6 px-4;
+  }
 }
 
 /* Tailwind class'ları ile stillendirilmiş kendi class'larını oluşturabiliyoryuz */
@@ -35,12 +39,14 @@
 /* Scrollbar'ları stillendir */
 *::-webkit-scrollbar {
   background: #0f0f0f;
-  width: 5px;
+  width: 7px;
+  height: 7px;
 }
 
 *::-webkit-scrollbar-thumb {
   background: #3f3f3f;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 *::-webkit-scrollbar-thumb:hover {
