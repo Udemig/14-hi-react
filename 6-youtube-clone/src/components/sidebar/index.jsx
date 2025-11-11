@@ -38,7 +38,7 @@ const Sidebar = () => {
 
               <div>
                 {category.items.map((item, key) => (
-                  <Link to={item.path} key={key} className="flex gap-4 items-center p-2 hover:bg-[#272727] rounded-lg">
+                  <Link to={item.path} key={key} className="flex gap-4 items-center p-2 hover:bg-dark rounded-lg">
                     <span className="text-xl">{item.icon}</span>
                     <span className="whitespace-nowrap">{item.name}</span>
                   </Link>
