@@ -5,9 +5,11 @@ import BasicLoader from "../../components/loader/basic-loader";
 import Error from "../../components/error";
 import Shorts from "../../components/shorts";
 import Card from "../../components/card";
+import Spinner from "../../components/loader/spinner";
 
 const Search = () => {
   const [loading, setLoading] = useState(true);
+  const [moreLoading, setMoreLoading] = useState(false);
   const [error, setError] = useState(null);
   const [data, setData] = useState([]);
   const [token, setToken] = useState(null);
@@ -28,11 +30,30 @@ const Search = () => {
       .get("/search", { params })
       .then((res) => {
         setData(res.data.data);
-        setToken(res.data.token);
+        setToken(res.data.continuation);
       })
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
   }, [query]);
+
+  // daha fazla içeriği yükle
+  const handleLoadMore = () => {
+    setMoreLoading(true);
+
+    const params = {
+      query,
+      token,
+    };
+
+    api
+      .get("/search", { params })
+      .then((res) => {
+        setData([...data, ...res.data.data]);
+        setToken(res.data.continuation);
+      })
+      .catch((err) => setError(err.message))
+      .finally(() => setMoreLoading(false));
+  };
 
   // api'dan gelen yanıt içerisinden video | shorts | shorts_listing türündeki verileri filtrledik
   const filtredArr = data.filter((i) => i.type === "video" || i.type === "shorts" || i.type === "shorts_listing");
@@ -58,6 +79,19 @@ const Search = () => {
               )
             )}
           </div>
+
+          {moreLoading && <Spinner />}
+
+          {!moreLoading && token && (
+            <div className="flex justify-center ">
+              <button
+                onClick={handleLoadMore}
+                className="bg-zinc-700 py-2 px-5 my-10 rounded-md cursor-pointer hover:bg-zinc-800 transition"
+              >
+                Daha Fazla
+              </button>
+            </div>
+          )}
         </>
       )}
     </div>
