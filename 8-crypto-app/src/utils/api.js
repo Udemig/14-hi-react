@@ -15,10 +15,24 @@ const coinApi = {
   },
 
   // coin detay getir
-  async getCoinDetails() {},
+  async getCoinDetails(id) {
+    const res = await api.get(`/coins/${id}`);
+
+    return res.data;
+  },
 
   // coin fiyat geçmişini getir
-  async getPriceHistory() {},
+  async getPriceHistory(id, days) {
+    const res = await api.get(`/coins/${id}/market_chart`, {
+      params: { vs_currency: "usd", days },
+    });
+
+    return res.data.prices.map(([timestamp, price]) => ({
+      price,
+      timestamp,
+      date: new Date(timestamp).toISOString(),
+    }));
+  },
 };
 
 export default coinApi;

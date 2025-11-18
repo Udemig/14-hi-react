@@ -41,3 +41,29 @@ export const formatBigNumber = (number) => {
     return "$" + number.toLocaleString();
   }
 };
+
+// tarihi formatla
+export const formatDate = (timestamp, days) => {
+  const date = new Date(timestamp);
+
+  if (days === 1) {
+    // 24s seçiliyse saat ve dakikayı döndür
+    return date.toLocaleTimeString("tr", {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  } else if (days === 7) {
+    // 1 hafta seçiliyse gün / ay / gün_ismi döndür
+    return date.toLocaleDateString("tr", {
+      day: "2-digit",
+      month: "2-digit",
+      weekday: "short",
+    });
+  } else {
+    // 1 haftadan büyükse gün / ay döndür
+    return date.toLocaleDateString("tr", {
+      day: "2-digit",
+      month: "2-digit",
+    });
+  }
+};
