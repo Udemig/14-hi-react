@@ -1,18 +1,16 @@
 import { useSelector } from "react-redux";
+import Card from "./card";
 
 const List = () => {
   // useSelector hook'ı
   // store tutulan verilere abone olmaya yarar
   // parametre olarak store'a erişen bir fonksiyon alır
-  const { todos } = useSelector((store) => store.todoReducer);
+  const { todos, isLoading, error } = useSelector((store) => store.todoReducer);
 
   return (
     <div className="grid gap-10 mt-10">
       {todos.map((todo) => (
-        <div key={todo.id}>
-          <p>{todo.text}</p>
-          <p>{todo.createdAt}</p>
-        </div>
+        <Card key={todo.id} todo={todo} />
       ))}
     </div>
   );

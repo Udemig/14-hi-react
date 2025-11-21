@@ -1,0 +1,16 @@
+{
+  "todos": [
+    {
+      "id": "f4d6ef8a-5afc-48a7-b9b9-e006d35eb0cd",
+      "text": "Redux Çalış",
+      "isDone": false,
+      "createdAt": 1763665404904
+    },
+    {
+      "id": "b8509919-20d8-466e-84b7-0473385b95dc",
+      "text": "Dizi methodlarına bak",
+      "isDone": false,
+      "createdAt": 1763665420122
+    }
+  ]
+}

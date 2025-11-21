@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { v4 } from "uuid";
+import { createTodo } from "../redux/actions/todo-actions";
 
 const Form = () => {
   // bir component içerisinde dispatch yapılacaksa bu kurulum gerekli
@@ -24,8 +25,8 @@ const Form = () => {
       createdAt: new Date().getTime(),
     };
 
-    // reducer'a todo oluşturma haberi gönder
-    dispatch({ type: "CREATE", payload: newTodo });
+    // thunk aksiyonuyla api'a istek atıp reducer'a haber gönder
+    dispatch(createTodo(newTodo));
   };
 
   return (

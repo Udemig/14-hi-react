@@ -61,3 +61,9 @@
 
 4. Store'u projeye tanıt
    Provider ile app component'ı sarmala
+
+# Redux Thunk
+
+- Asenkron aksiyonlar yazabilmemize olanak sağlayan middleware.
+- Redux thunk sayesinde aksiyonlarımızın içerisinde api isteği atabiliriz.
+- Bu kullanımda componnet içerisindeki kod kalabalığını ve tekrarını önler
