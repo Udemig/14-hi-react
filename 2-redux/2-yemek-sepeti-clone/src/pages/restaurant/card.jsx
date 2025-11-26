@@ -15,7 +15,7 @@ const Card = ({ product }) => {
   const handleAdd = () => {
     basketItem
       ? // ürün sepette varsa miktarını arttır
-        dispatch(updateItem(product.id, product.amount + 1))
+        dispatch(updateItem(product.id, basketItem.amount + 1))
       : // ürün sepete yoksa ürünü oluştur
         dispatch(createItem(product));
   };
