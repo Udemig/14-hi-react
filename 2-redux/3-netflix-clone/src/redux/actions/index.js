@@ -1,0 +1,32 @@
+import api from "../../../api";
+import ACTIONS from "../actions/actionTypes";
+
+// thunk aksiyonu
+// todo çıkarma durumunda reducer'a haber ver
+// todo header film sayısı
+// todo detay sayfasında listeden çıkarma özelliği
+export const toggleWatchList = (movie, isAdd) => (dispatch) => {
+  // api'a gönderilecek veriyi hazırla
+  const body = {
+    media_type: "movie",
+    media_id: movie.id,
+    watchlist: isAdd,
+  };
+
+  // api isteği at
+  api
+    .post("account/19719088/watchlist", body)
+    // istek başarılı olursa reducer'a haber ver
+    .then(() => {
+      dispatch({ type: ACTIONS.ADD_TO_LIST, payload: movie });
+    });
+};
+
+export const getWatchList = () => (dispatch) => {
+  dispatch({ type: ACTIONS.LIST_LOADING });
+
+  api
+    .get("account/19719088/watchlist/movies")
+    .then((res) => dispatch({ type: ACTIONS.LIST_SUCCESS, payload: res.data.results }))
+    .catch((err) => dispatch({ type: ACTIONS.LIST_ERROR, payload: err.message }));
+};

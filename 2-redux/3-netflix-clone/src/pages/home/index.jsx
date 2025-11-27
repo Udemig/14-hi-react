@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import Hero from "./hero";
 import api from "../../api";
+import Loader from "../../components/loader";
+import Error from "../../components/error";
+import MovieList from "./movie-list";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -17,11 +20,17 @@ const Home = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  console.log(loading, error, genres);
-
   return (
     <div>
       <Hero />
+
+      {loading ? (
+        <Loader />
+      ) : error ? (
+        <Error message={error} />
+      ) : (
+        genres.map((genre) => <MovieList key={genre.id} genre={genre} />)
+      )}
     </div>
   );
 };

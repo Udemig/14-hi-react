@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import api from "../../api";
 import Loader from "../../components/loader";
 import Error from "../../components/error";
 import { Link } from "react-router-dom";
 import { Play, Plus } from "lucide-react";
 import { BASE_IMG_URL } from "../../constants";
+import WatchListBtn from "../../components/button/watch-list-btn";
 
 const Hero = () => {
   const [loading, setLoading] = useState(true);
@@ -58,10 +59,7 @@ const Hero = () => {
                 Filmi İzle
               </Link>
 
-              <Link to="/" className="hero-btn from-blue-600 to-blue-700">
-                <Plus className="size-5" />
-                Listeye Ekle
-              </Link>
+              <WatchListBtn movie={movie} />
             </div>
           </div>
 
@@ -77,4 +75,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default memo(Hero);
