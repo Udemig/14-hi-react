@@ -14,7 +14,7 @@ const Actors = ({ cast }) => {
   };
 
   return (
-    <div className="mb-10">
+    <div className="mb-15">
       <h2 className="font-semibold text-lg md:text-xl my-5">Oyuncular</h2>
 
       <Splide

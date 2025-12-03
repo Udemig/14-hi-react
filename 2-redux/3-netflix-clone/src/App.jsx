@@ -6,7 +6,7 @@ import Movie from "./pages/movie";
 import WatchList from "./pages/watch-list";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { getWatchList } from "./pages/redux/actions";
+import { getWatchList } from "./redux/actions";
 
 const App = () => {
   const dispatch = useDispatch();

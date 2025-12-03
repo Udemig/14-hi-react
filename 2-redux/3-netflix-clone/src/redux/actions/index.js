@@ -1,8 +1,7 @@
-import api from "../../../api";
+import api from "../../api";
 import ACTIONS from "../actions/actionTypes";
 
 // thunk aksiyonu
-// todo çıkarma durumunda reducer'a haber ver
 // todo header film sayısı
 // todo detay sayfasında listeden çıkarma özelliği
 export const toggleWatchList = (movie, isAdd) => (dispatch) => {
@@ -18,7 +17,10 @@ export const toggleWatchList = (movie, isAdd) => (dispatch) => {
     .post("account/19719088/watchlist", body)
     // istek başarılı olursa reducer'a haber ver
     .then(() => {
-      dispatch({ type: ACTIONS.ADD_TO_LIST, payload: movie });
+      // ekleme/çıkarma durumuna göre reducer'a haber
+      isAdd
+        ? dispatch({ type: ACTIONS.ADD_TO_LIST, payload: movie })
+        : dispatch({ type: ACTIONS.REMOVE_FROM_LIST, payload: movie.id });
     });
 };
 

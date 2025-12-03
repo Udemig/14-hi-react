@@ -13,7 +13,7 @@ const Videos = ({ videoData }) => {
       <Splide options={{ pagination: false }}>
         {videoData.map((video) => (
           <SplideSlide>
-            <ReactPlayer src={`https://www.youtube.com/watch?v=${video.key}`} width="100%" height="400px" controls />
+            <ReactPlayer src={`https://www.youtube.com/watch?v=${video.key}`} width="100%" height="500px" controls />
           </SplideSlide>
         ))}
       </Splide>

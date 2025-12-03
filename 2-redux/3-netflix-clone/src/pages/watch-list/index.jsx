@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { BASE_IMG_URL } from "../../constants";
 import { BookmarkMinus } from "lucide-react";
 import { toggleWatchList } from "../../redux/actions";
+import Loader from "../../components/loader";
+import Error from "../../components/error";
 
 const WatchList = () => {
   const dispatch = useDispatch();
@@ -27,7 +29,7 @@ const WatchList = () => {
           {watchlist.map((movie) => (
             <div key={movie.id} className="group relative">
               <button
-                onClick={handleRemove}
+                onClick={() => handleRemove(movie)}
                 className="hidden group-hover:flex absolute top-3 end-3 bg-red-500 p-2 rounded-lg z-10 hover:scale-110 transition-all duration-300 shadow-lg shadow-red-500/50 items-center justify-center cursor-pointer"
               >
                 <BookmarkMinus />

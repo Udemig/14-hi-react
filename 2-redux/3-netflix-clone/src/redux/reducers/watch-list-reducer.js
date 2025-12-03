@@ -12,6 +12,11 @@ const watchListReducer = (state = initialState, action) => {
       const updatedList = state.watchlist.concat(action.payload);
       return { ...state, watchlist: updatedList };
 
+    case ACTIONS.REMOVE_FROM_LIST:
+      const filtredList = state.watchlist.filter((item) => item.id !== action.payload);
+
+      return { ...state, watchlist: filtredList };
+
     case ACTIONS.LIST_LOADING:
       return { ...state, loading: true };
 
