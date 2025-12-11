@@ -38,10 +38,10 @@ const Modal = () => {
               <div className="info-box">
                 <Gallery images={info.aircraft.images} />
                 <Airport airportData={info.airport} />
-                <Time />
+                <Time timeData={info.time} />
               </div>
 
-              <Aircraft />
+              <Aircraft aircraftData={info.aircraft} />
             </div>
           )
         )}

@@ -29,9 +29,9 @@ const detailSlice = createSlice({
       state.isLoading = true;
     });
 
-    builder.addCase(getDetails.rejected, (state, { payload }) => {
+    builder.addCase(getDetails.rejected, (state, { error }) => {
       state.isLoading = false;
-      state.error = payload;
+      state.error = error.message;
     });
 
     builder.addCase(getDetails.fulfilled, (state, { payload }) => {

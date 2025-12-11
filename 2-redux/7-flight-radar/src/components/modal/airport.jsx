@@ -1,9 +1,8 @@
 import c from "../../utils/null-check";
 
 const Airport = ({ airportData }) => {
-  console.log(airportData);
   return (
-    <div>
+    <div className="airport">
       <div>
         <h2>{c(airportData.origin?.code?.iata)}</h2>
         <h3>{c(airportData.origin?.position?.region?.city)}</h3>
@@ -12,6 +11,10 @@ const Airport = ({ airportData }) => {
           <br />
           {c(airportData.origin?.timezone?.name)}
         </span>
+      </div>
+
+      <div className="airport-icon">
+        <img src="/plane.svg" alt="plane" width={50} />
       </div>
 
       <div>
