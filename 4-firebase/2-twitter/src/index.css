@@ -13,12 +13,20 @@
 
 @layer base {
   button {
-    @apply cursor-pointer hover:brightness-75 transition-all;
+    @apply cursor-pointer hover:brightness-75 transition-all disabled:brightness-50 disabled:cursor-not-allowed;
   }
 }
 
 @layer components {
   .input {
     @apply bg-secondary text-black rounded mt-1 p-2 outline-none shadow-lg focus:shadow-[gray] w-full;
+  }
+
+  .submit-button {
+    @apply bg-secondary text-primary font-bold h-9 px-5 py-1.5 rounded-full tracking-wide min-w-[100px] flex justify-center items-center;
+  }
+
+  .form-icon {
+    @apply hover:bg-tw-blue/20 rounded-full size-9 grid place-items-center;
   }
 }

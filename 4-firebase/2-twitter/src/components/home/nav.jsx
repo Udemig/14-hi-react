@@ -2,6 +2,7 @@ import { FaDoorOpen } from "react-icons/fa";
 import { navSections } from "../../constants";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase";
+import UserAvatar from "../post-form/user-avatar";
 
 const Nav = ({ user }) => {
   return (
@@ -25,12 +26,7 @@ const Nav = ({ user }) => {
       <div>
         <div className="flex max-md:flex-col gap-4 justify-between max-md:items-center">
           <div className="flex gap-2">
-            <img
-              src={user.photoURL}
-              alt={user.displayName}
-              referrerPolicy="no-referrer"
-              className="rounded-full max-w-11.25"
-            />
+            <UserAvatar photo={user.photoURL} name={user.displayName} />
 
             <div>
               <p className="max-md:hidden text-sm">{user.displayName}</p>
