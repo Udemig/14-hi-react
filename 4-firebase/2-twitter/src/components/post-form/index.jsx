@@ -9,6 +9,7 @@ import Preview from "./preview";
 import uploadFile from "../../firebase/upload";
 
 const PostForm = ({ user }) => {
+  const [loading, setLoading] = useState(false);
   const [previewType, setPreviewType] = useState(null);
   const [previewUrl, setPreviewUrl] = useState(null);
   const fileInputRef = useRef();
@@ -26,6 +27,8 @@ const PostForm = ({ user }) => {
 
     // veritabanına yeni tweeti kaydet
     try {
+      setLoading(true);
+
       // medyayı storage'a yükle
       const mediaUrl = await uploadFile(file);
 
@@ -42,6 +45,7 @@ const PostForm = ({ user }) => {
         content: {
           text,
           media: mediaUrl,
+          mediaType: previewType,
         },
         isEdited: false,
         likes: [],
@@ -55,6 +59,8 @@ const PostForm = ({ user }) => {
     } catch (error) {
       console.log("HATAAA", error);
       toast.error("Hata! " + error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -85,7 +91,10 @@ const PostForm = ({ user }) => {
   const handleCancelPrewiew = () => {
     setPreviewUrl(null);
     setPreviewType(null);
-    fileInputRef.current.value = null;
+
+    if (fileInputRef.current) {
+      fileInputRef.current.value = null;
+    }
   };
 
   return (
@@ -95,9 +104,9 @@ const PostForm = ({ user }) => {
       <form onSubmit={handleSubmit} className="w-full pt-1">
         <TextArea />
 
-        <Preview url={previewUrl} type={previewType} cancel={handleCancelPrewiew} />
+        <Preview loading={loading} url={previewUrl} type={previewType} cancel={handleCancelPrewiew} />
 
-        <FormActions fileInputRef={fileInputRef} handleMediaChange={handleMediaChange} />
+        <FormActions loading={loading} fileInputRef={fileInputRef} handleMediaChange={handleMediaChange} />
       </form>
     </div>
   );

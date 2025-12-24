@@ -3,6 +3,7 @@ import { navSections } from "../../constants";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase";
 import UserAvatar from "../post-form/user-avatar";
+import { getUserName } from "../../utils/helpers";
 
 const Nav = ({ user }) => {
   return (
@@ -30,7 +31,7 @@ const Nav = ({ user }) => {
 
             <div>
               <p className="max-md:hidden text-sm">{user.displayName}</p>
-              <p className="max-md:hidden text-sm text-zinc-400">{user.displayName}</p>
+              <p className="max-md:hidden text-sm text-zinc-400">{getUserName(user.displayName)}</p>
             </div>
           </div>
 

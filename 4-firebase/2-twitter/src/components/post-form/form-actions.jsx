@@ -1,8 +1,9 @@
 import { IoImageOutline as Image } from "react-icons/io5";
 import { MdOutlineGifBox as Gif } from "react-icons/md";
 import { FaRegSmile as Emoji } from "react-icons/fa";
+import Loader from "../loader";
 
-const FormActions = ({ fileInputRef, handleMediaChange }) => {
+const FormActions = ({ fileInputRef, handleMediaChange, loading }) => {
   return (
     <div className="flex justify-between">
       <div className="text-tw-blue text-xl flex gap-4">
@@ -25,8 +26,8 @@ const FormActions = ({ fileInputRef, handleMediaChange }) => {
         </button>
       </div>
 
-      <button type="submit" className="submit-button">
-        Gönder
+      <button disabled={loading} type="submit" className="submit-button">
+        {loading ? <Loader /> : "Gönder"}
       </button>
     </div>
   );

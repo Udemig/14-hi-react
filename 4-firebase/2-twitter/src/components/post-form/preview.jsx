@@ -1,6 +1,6 @@
 import { IoMdClose } from "react-icons/io";
 
-const Preview = ({ url, type, cancel }) => {
+const Preview = ({ url, type, cancel, loading }) => {
   if (!type && !url) return null;
 
   return (
@@ -8,6 +8,7 @@ const Preview = ({ url, type, cancel }) => {
       <button
         type="button"
         onClick={cancel}
+        disabled={loading}
         className="absolute top-3 cursor-pointer end-3 text-2xl p-1 hover:bg-zinc-700 transition bg-primary/90 rounded-lg z-999"
       >
         <IoMdClose />
