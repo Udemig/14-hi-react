@@ -4,8 +4,11 @@ import { db } from "../../firebase";
 import { doc, updateDoc } from "firebase/firestore";
 import { useState } from "react";
 import uploadFile from "../../firebase/upload";
+import Loader from "../loader";
+import deleteFromStorage from "../../firebase/delete-from-storage";
 
 const EditModal = ({ isOpen, close, tweet }) => {
+  const [loading, setLoading] = useState(false);
   const [isMediaDeleting, setIsMediaDeleting] = useState(false);
 
   // form gönderilince
@@ -17,9 +20,11 @@ const EditModal = ({ isOpen, close, tweet }) => {
     const file = e.target.media?.files[0];
     const fileType = file?.type?.split("/")?.[0];
 
+    // veri boşsa hata ver
+    if (!text && !file && !tweet.content.media && isMediaDeleting) return toast.warning("İçerik boş olamaz");
+
     try {
-      // veri boşsa hata ver
-      if (!text && !file && !tweet.content.media) return toast.warning("İçerik boş olamaz");
+      setLoading(true);
 
       // güncellenicek veriyi hazırla
       let updateData = {
@@ -31,6 +36,9 @@ const EditModal = ({ isOpen, close, tweet }) => {
       if (isMediaDeleting) {
         updateData["content.media"] = null;
         updateData["content.mediaType"] = null;
+
+        // eski medyayı storage'dan sil
+        await deleteFromStorage(tweet.media);
       }
 
       // eğer yeni dosya seçildiyse onu storage'u yükle
@@ -51,11 +59,19 @@ const EditModal = ({ isOpen, close, tweet }) => {
       setIsMediaDeleting(false);
     } catch (error) {
       toast.warning(`Hata: ${error.message}`);
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <Modal isOpen={isOpen} close={close}>
+    <Modal
+      isOpen={isOpen}
+      close={() => {
+        close();
+        setIsMediaDeleting(false);
+      }}
+    >
       <h1 className="text-2xl">Tweet'i Düzenle</h1>
 
       <form onSubmit={handleSubmit} className="flex flex-col mt-10 min-w-[90%]">
@@ -76,9 +92,11 @@ const EditModal = ({ isOpen, close, tweet }) => {
         )}
 
         <div className="flex justify-end mt-10 gap-5">
-          <button type="button">Vazgeç</button>
-          <button type="submit" className="submit-button tracking-tight font-semibold">
-            Kaydet
+          <button disabled={loading} type="button">
+            Vazgeç
+          </button>
+          <button disabled={loading} type="submit" className="submit-button tracking-tight font-semibold">
+            {loading ? <Loader /> : "Kaydet"}
           </button>
         </div>
       </form>

@@ -4,6 +4,7 @@ import { MdEdit, MdDelete } from "react-icons/md";
 import { doc, deleteDoc } from "firebase/firestore";
 import { db, auth } from "../../firebase";
 import EditModal from "../modal/edit-modal";
+import deleteFromStorage from "../../firebase/delete-from-storage";
 
 const Dropdown = ({ tweet }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,6 +36,12 @@ const Dropdown = ({ tweet }) => {
 
     const docRef = doc(db, "tweets", tweet.id);
 
+    // tweet'in medya içeriği varsa storage'dan sil
+    if (tweet.content.media) {
+      await deleteFromStorage(tweet.content.media);
+    }
+
+    // tweet'i sil
     await deleteDoc(docRef);
   };
 
