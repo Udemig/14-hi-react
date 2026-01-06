@@ -1,3 +1,23 @@
+## Selectors - Seçici Methodlar
+
+- Screen nesnesi aracılığıyla erişilen methodlardır
+- Test içerisinde renderlanan jsx elementlerini çağırmaya yarar.
+- https://testing-library.com/docs/queries/byrole
+
+## HTML Element Rolleri
+
+- Çoğu html elementinin görevini temsil eden bir rolü vardır.
+- Bazen etkiet ismi ile aynı bazen farklı olabilir
+- https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles
+
+## Matchers - Kontrol Methodları
+
+- Matcher'lar expect ile birlikte bir elementi / değişkeni / fonksiyonu kontrol etmek için kullanılır.
+- Matcher methdoları aracığıyla element üzerinedeki beklenetimizi test edebiliriz.
+
+- DOM (Element): https://github.com/testing-library/jest-dom?tab=readme-ov-file
+- Değişkenler: https://jestjs.io/docs/getting-started
+
 # 🧪 React Unit Testing Öğrenme Projesi
 
 Bu proje, React uygulamalarında **unit test** yazmayı öğrenmek isteyenler için hazırlanmış minimal bir başlangıç şablonudur. Jest ve React Testing Library kullanarak test yazma pratikleri yapabilirsiniz.
@@ -14,7 +34,8 @@ Bu proje, React uygulamalarında **unit test** yazmayı öğrenmek isteyenler i�
 ## 🚀 Başlangıç
 
 ### Gereksinimler
-- Node.js 16+ 
+
+- Node.js 16+
 - npm veya yarn
 
 ### Kurulum
@@ -33,23 +54,29 @@ npm run dev
 ## 🧪 Testleri Çalıştırma
 
 ### Temel Test Komutu
+
 ```bash
 npm test
 ```
 
 ### Watch Modunda Testler
+
 Dosyalar değiştikçe testler otomatik çalışır:
+
 ```bash
 npm run test:watch
 ```
 
 ### Coverage Raporu ile Testler
+
 Test kapsama raporunu görmek için:
+
 ```bash
 npm run test:coverage
 ```
 
 Coverage raporu `coverage/` klasöründe oluşturulur. HTML raporunu görmek için:
+
 ```bash
 coverage/lcov-report/index.html
 ```
@@ -105,23 +132,30 @@ Bu projede şunları öğrenebilirsiniz:
 ## 🔧 Yapılandırma Dosyaları
 
 ### jest.config.mjs
+
 Jest'in temel ayarlarını içerir:
+
 - Test environment (jsdom)
 - Transform ayarları (babel-jest)
 - Module name mapping (CSS ve dosya mock'ları)
 
 ### jest.setup.mjs
+
 Her test öncesi çalıştırılan setup dosyası:
+
 - @testing-library/jest-dom matcher'larını import eder
 
 ### babel.config.js
+
 JavaScript transpiler ayarları:
+
 - React JSX desteği
 - Modern JavaScript özelliklerinin dönüştürülmesi
 
 ## 📝 Yeni Test Ekleme
 
 1. Yeni bir component oluşturun:
+
 ```jsx
 // src/components/Card.jsx
 export const Card = ({ title, content }) => (
@@ -133,19 +167,21 @@ export const Card = ({ title, content }) => (
 ```
 
 2. Test dosyası oluşturun:
+
 ```jsx
 // src/__tests__/Card.test.jsx
-import { render, screen } from '@testing-library/react';
-import { Card } from '../components/Card';
+import { render, screen } from "@testing-library/react";
+import { Card } from "../components/Card";
 
-test('renders card with title and content', () => {
+test("renders card with title and content", () => {
   render(<Card title="Test" content="Content" />);
-  expect(screen.getByText('Test')).toBeInTheDocument();
-  expect(screen.getByText('Content')).toBeInTheDocument();
+  expect(screen.getByText("Test")).toBeInTheDocument();
+  expect(screen.getByText("Content")).toBeInTheDocument();
 });
 ```
 
 3. Testi çalıştırın:
+
 ```bash
 npm test
 ```

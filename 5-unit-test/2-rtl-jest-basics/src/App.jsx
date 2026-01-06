@@ -3,6 +3,7 @@ import { Button } from "./components/Button";
 import "./App.css";
 import ColorButton from "./components/ColorButton";
 import Counter from "./components/Counter";
+import Accordion from "./components/Accordion";
 
 function App() {
   const [clickCount, setClickCount] = useState(0);
@@ -31,6 +32,8 @@ function App() {
 
       <main className="app-content">
         <section className="demo-section">
+          <Accordion />
+
           <Counter />
 
           <ColorButton />
