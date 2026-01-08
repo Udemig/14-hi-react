@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
 import { thunk } from "redux-thunk";
-import mockDetailData from "../utils/constants";
+import { mockDetailData } from "../utils/constants";
 
 // sahte store oluşturma fonksiyonunu kur
 const createMockStore = configureStore([thunk]);
@@ -44,8 +44,11 @@ it("store'a veri geldiğinde ekrana ülke ismi ve bayrağı gelir", () => {
   expect(loader).toBeNull();
 
   // ülke ismi ekranda mı
+  screen.getByRole("heading", { name: "Turkey" });
 
   // ülke bayrağı ekranda mı
+  const img = screen.getByAltText(mockDetailData.flag.alt);
 
   // ülke bayrağının kaynağı doğru mu (src)
+  expect(img).toHaveAttribute("src", mockDetailData.flag.png);
 });

@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/* -----
+   iOS 26 Liquid Glass Tasarım Token'ları
+   ----- */
+@theme {
+  --glass-blur-xs: 8px;
+  --glass-blur-md: 16px;
+  --glass-blur-lg: 26px;
+
+  --glass-border-light: rgba(255, 255, 255, 0.22);
+  --glass-border-dark: rgba(255, 255, 255, 0.1);
+
+  --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  --glass-shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+  --color-glass-tint-light: rgba(255, 255, 255, 0.08);
+  --color-glass-tint-dark: rgba(0, 0, 0, 0.12);
+}
+
+/* -----
+   Glass Surface Utility'leri
+   ----- */
+@utility glass-surface {
+  backdrop-filter: blur(var(--glass-blur-md)) saturate(1.4) brightness(1.05);
+  -webkit-backdrop-filter: blur(var(--glass-blur-md)) saturate(1.4) brightness(1.05);
+  border: 1px solid var(--glass-border-light);
+  background: var(--color-glass-tint-light);
+  box-shadow: var(--glass-shadow);
+}
+
+@utility glass-surface-xs {
+  backdrop-filter: blur(var(--glass-blur-xs)) saturate(1.35);
+  -webkit-backdrop-filter: blur(var(--glass-blur-xs)) saturate(1.35);
+}
+
+@utility glass-surface-lg {
+  backdrop-filter: blur(var(--glass-blur-lg)) saturate(1.5);
+  -webkit-backdrop-filter: blur(var(--glass-blur-lg)) saturate(1.5);
+}
+
+@utility glass-dark {
+  border-color: var(--glass-border-dark);
+  background: var(--color-glass-tint-dark);
+}
+
+/* -----
+   Button için özel Glass efektleri
+   ----- */
+@utility glass-button-base {
+  backdrop-filter: blur(var(--glass-blur-xs)) saturate(1.3) brightness(1.05);
+  -webkit-backdrop-filter: blur(var(--glass-blur-xs)) saturate(1.3) brightness(1.05);
+  border: 1px solid var(--glass-border-light);
+  box-shadow: var(--glass-shadow-sm);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@utility glass-button-hover {
+  backdrop-filter: blur(var(--glass-blur-md)) saturate(1.4) brightness(1.1);
+  -webkit-backdrop-filter: blur(var(--glass-blur-md)) saturate(1.4) brightness(1.1);
+  box-shadow: var(--glass-shadow);
+  transform: translateY(-1px);
+}
+
+@utility glass-button-active {
+  backdrop-filter: blur(var(--glass-blur-xs)) saturate(1.2) brightness(0.98);
+  -webkit-backdrop-filter: blur(var(--glass-blur-xs)) saturate(1.2) brightness(0.98);
+  box-shadow: var(--glass-shadow-sm);
+  transform: translateY(0);
+}

@@ -52,3 +52,22 @@
 
 - Artık yukarıdaki 3 parçayı istediğiniz gibi birleştirebilirsiniz
 - `queryByTitle()` | `findAllByText` | `getAllByTestId()`
+
+# TDD - Test Driven Development
+
+- Test güdümlü geliştirme, yazılım geliştirme sürecinde testlerinde koddan önce yazıldığı bir tekniktir.
+- Red to green test olarak geçer.
+
+## TDD Süreci
+
+1. Test Yaz: İstenen özellikler için önce testler yazılır
+2. Test Çalıştır: Testler başarısız olur
+3. Kod Yaz: Testleri geçicek minimum kodu yaz
+4. Testleri Çalıştır: Tüm testleri geçtiğimizi kontrol ederiz
+5. Refector: Kodu iyileştir, testlerin hala geçmesi gerekir
+
+## TDD Avantajları
+
+- Daha temiz ve sürdürülebilir
+- Erken hata tepiti
+- Değişiklik yaparken güven sağlar

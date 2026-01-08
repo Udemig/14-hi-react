@@ -1,0 +1,192 @@
+---
+alwaysApply: true
+---
+
+# 📘 README — **iOS 26 Liquid Glass Stilini TailwindCSS v4 ile Uygulama**
+
+Bu rehber, arayüzüne iOS 26’nın yeni cam-optik hissini taşımanın standartlarını ve TailwindCSS v4 ile nasıl kuracağını adım adım açıklar — soft blur, şeffaflık, dinamik renk etkileşimi ve materyal hiyerarşisi ile.
+
+---
+
+## 🚀 1. iOS 26 Liquid Glass Tasarım Özeti — Nedir, Nasıl Çalışır?
+
+**Liquid Glass**, Apple’ın WWDC 2025’te tanıttığı yeni UI tasarım dili. Bu dil klasik “flat/blur” yaklaşımını aşarak camın gerçek optik niteliklerini taklit etmeyi amaçlıyor:
+
+- **Şeffaflık, ışık kırılması ve yansıtma** hissi
+- **Renk içerdiği arka planla uyumlu adaptasyon**
+- **Dinamik blur + vibrancy (canlılık) efekti**
+- Kontroller/aracı elemanlar arasındaki **derinlik ve hiyerarşi**
+- Light/Dark tema ile uyumlu davranış([Apple][1])
+
+Bu tasarım dili arayüzün sadece görselini değiştirmekle kalmayıp, ışıkla etkileşim ve içerik-kontrol dengesi sağlar.([Vikipedia][2])
+
+---
+
+## 🎯 2. Kullanacağımız CSS Özellikleri
+
+Liquid Glass hissi için kullanacağımız temel CSS efektleri:
+
+✅ `backdrop-filter`: Blur, saturate ve brightness efektleri
+✅ Şeffaf/yarı şeffaf renkler (`color-mix`/RGBA)
+✅ İnce sınırlar (light stroke)
+✅ Gölgeler (derinlik hissi)
+✅ Dinamik renk adaptasyonu (arka plana bağlı renk tonu)
+🔎 Bunların hepsi TailwindCSS v4’te custom token/utility olarak tanımlanabilir.
+
+---
+
+## 🛠️ 3. TailwindCSS v4 Hazırlığı
+
+Tailwind 4 yapısı, **@theme** ve **@utility** gibi modern özellikleri desteklediği için bu tür UI efektleri için ideal.
+
+### 3.1 Tailwind config
+
+Yapılandırmana şu minimal yapıyı ekle:
+
+```js
+// tailwind.config.js
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx,html}"],
+  theme: {
+    extend: {
+      colors: {
+        glassTintLight: "rgba(255,255,255,0.08)",
+        glassTintDark: "rgba(0,0,0,0.12)",
+      },
+      backdropBlur: {
+        xs: "8px",
+        md: "16px",
+        lg: "26px",
+      },
+      boxShadow: {
+        glass: "0 10px 30px rgba(0,0,0,0.18)",
+      },
+    },
+  },
+  plugins: [],
+};
+```
+
+---
+
+## 💡 4. `app.css` — Tasarım Token’ları & Utility’ler
+
+Bu kısım, bütün Liquid Glass yüzeylerini tanımlayacak utility’leri içerir.
+
+```css
+@import "tailwindcss";
+
+/* -----------------------------
+   Glass yüzey genel yapısı
+   ----------------------------- */
+@theme {
+  --glass-blur-xs: 8px;
+  --glass-blur-md: 16px;
+  --glass-blur-lg: 26px;
+
+  --glass-border-light: rgba(255, 255, 255, 0.22);
+  --glass-border-dark: rgba(255, 255, 255, 0.1);
+
+  --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+@utility glass-surface {
+  backdrop-filter: blur(var(--glass-blur-md)) saturate(1.4) brightness(1.05);
+  -webkit-backdrop-filter: blur(var(--glass-blur-md)) saturate(1.4) brightness(1.05);
+  border: 1px solid var(--glass-border-light);
+  background: theme(colors.glassTintLight);
+  box-shadow: var(--glass-shadow);
+}
+
+@utility glass-surface-xs {
+  backdrop-filter: blur(var(--glass-blur-xs)) saturate(1.35);
+  -webkit-backdrop-filter: blur(var(--glass-blur-xs)) saturate(1.35);
+}
+
+@utility glass-surface-lg {
+  backdrop-filter: blur(var(--glass-blur-lg)) saturate(1.5);
+  -webkit-backdrop-filter: blur(var(--glass-blur-lg)) saturate(1.5);
+}
+
+@utility glass-dark {
+  border-color: var(--glass-border-dark);
+  background: theme(colors.glassTintDark);
+}
+```
+
+Bu utility’ler sayesinde, her Liquid Glass yüzeyi tek tek elle yazmak yerine:
+
+```html
+<div class="glass-surface glass-surface-lg rounded-2xl p-6 glass-dark">
+  <!-- İçerik -->
+</div>
+```
+
+şeklinde kullanabilirsin.
+
+---
+
+## 📌 5. Örnek Component’ler
+
+### ✨ Asıl “Glass Card”
+
+```html
+<section class="glass-surface rounded-3xl p-6 max-w-lg mx-auto">
+  <h2 class="text-xl font-bold">iOS 26 Liquid Glass UI</h2>
+  <p class="mt-2 text-sm opacity-80">
+    Cam efekti ile içerik arka planıyla uyumlu bir derinlik ve yansıma hissi.
+  </p>
+</section>
+```
+
+### 📍 Navbar / Toolbar
+
+```html
+<header
+  class="glass-surface glass-surface-xs rounded-full px-4 py-2 flex items-center gap-4"
+>
+  <span class="font-semibold">Dashboard</span>
+  <button
+    class="px-3 py-1 bg-white/10 rounded-full hover:bg-white/20 transition"
+  >
+    Aksiyon
+  </button>
+</header>
+```
+
+---
+
+## 🔎 6. İpucu: Okunabilirlik ve Erişilebilirlik
+
+Liquid Glass yoğun blur + translucency içerir. UI kullanışlı kalması için:
+
+✅ Metin kontrastını yüksek tut
+✅ Blur’ü çok agresif yapma
+✅ Gerekirse “reduce transparency” benzeri bir toggle ekle
+
+Bu, Liquid Glass’ın tasarım hedefini bozmadan UX’i korumanı sağlar.
+
+---
+
+## 📚 7. iOS 26 Liquid Glass Kaynakları
+
+Aşağıdaki kaynaklar tasarım dilinin arkasındaki prensipleri, Apple’ın resmi yaklaşımını ve örnek uygulamaları içerir.
+
+- [Apple](https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/?utm_source=chatgpt.com)
+- [Apple](https://www.apple.com/in/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/?utm_source=chatgpt.com)
+- [Getmobil](https://getmobil.com/blog/apple-liquid-glass-tasarimi-nedir-neler-sunuyor/?srsltid=AfmBOoq-FpiBPnLfqTOfYZfEgskpZIzHl-446_3Tm8lbcSaLrJ2BxzdR&utm_source=chatgpt.com)
+- [Apple Developer](https://developer.apple.com/documentation/SwiftUI/Applying-Liquid-Glass-to-custom-views?utm_source=chatgpt.com)
+
+**Kaynak Özeti:**
+✔ Liquid Glass’ın Apple tarafından tanıtımı ve vizyonu (WWDC 2025). ([Apple][1])
+✔ İnsan arayüzü materyali prensipleri ve adaptasyon kuralları. ([Apple Developer][3])
+✔ Yeni tasarım dili ile iOS 26’nın nasıl şekillendiği. ([Vikipedia][4])
+✔ Liquid Glass’ın çevreyle interaktif UI davranışı ve adaptif renkleri. ([Apple][5])
+
+---
+
+[1]: https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/?utm_source=chatgpt.com "Apple introduces a delightful and elegant new software ..."
+[2]: https://en.wikipedia.org/wiki/Liquid_Glass?utm_source=chatgpt.com "Liquid Glass"
+[3]: https://developer.apple.com/documentation/SwiftUI/Applying-Liquid-Glass-to-custom-views?utm_source=chatgpt.com "Applying Liquid Glass to custom views"
+[4]: https://en.wikipedia.org/wiki/IOS_26?utm_source=chatgpt.com "IOS 26"
+[5]: https://www.apple.com/in/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/?utm_source=chatgpt.com "Apple introduces a delightful and elegant new software ..."
