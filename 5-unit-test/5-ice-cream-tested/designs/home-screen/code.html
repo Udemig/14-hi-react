@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Drop Cream Main Page Refined Variant 1</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#FF3366", // Slightly more vibrant pink
+                        "primary-dark": "#D61F4D",
+                        "primary-soft": "#FFF0F4",
+                        "background-light": "#FDFBFB",
+                        "background-dark": "#1A0F12",
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#25161A",
+                        "text-main": "#1E293B",
+                        "text-muted": "#64748B",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.625rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "3xl": "3rem", "full": "9999px"},
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'hover': '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
+                        'glow': '0 0 20px rgba(255, 51, 102, 0.35)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .text-balance {
+            text-wrap: balance;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-slate-50 antialiased selection:bg-primary selection:text-white overflow-x-hidden transition-colors duration-300">
+<div class="relative min-h-screen flex flex-col">
+<header class="sticky top-0 z-40 w-full border-b border-slate-100 bg-white/90 backdrop-blur-xl dark:bg-background-dark/90 dark:border-white/5 shadow-sm transition-all duration-300">
+<div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
+<div class="flex items-center gap-3 group cursor-pointer">
+<div class="flex size-10 items-center justify-center rounded-xl bg-primary text-white shadow-lg shadow-primary/30 transition-transform group-hover:scale-105 group-hover:rotate-3">
+<span class="material-symbols-outlined text-[24px]">icecream</span>
+</div>
+<h1 class="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">Drop Cream</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="group relative flex h-11 items-center justify-center gap-2.5 rounded-full bg-slate-50 border border-slate-200 px-5 text-sm font-bold text-slate-700 transition-all hover:bg-white hover:border-primary/30 hover:shadow-md hover:text-primary active:scale-95 dark:bg-white/5 dark:border-white/10 dark:text-white dark:hover:bg-white/10 dark:hover:border-white/20">
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:-translate-y-0.5 group-hover:rotate-6">shopping_cart</span>
+<span>Cart</span>
+<span class="absolute -right-1.5 -top-1.5 flex size-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white shadow-sm ring-2 ring-white dark:ring-background-dark animate-pulse">
+                            3
+                        </span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<section class="relative overflow-hidden bg-gradient-to-b from-primary-soft to-background-light dark:from-background-dark dark:to-card-dark pt-10 pb-20 lg:pt-20 lg:pb-32">
+<div class="absolute left-1/2 top-0 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none">
+<div class="absolute -left-20 top-20 size-[500px] rounded-full bg-primary/5 blur-[100px] animate-pulse"></div>
+<div class="absolute -right-20 bottom-0 size-[500px] rounded-full bg-blue-400/5 blur-[100px]"></div>
+</div>
+<div class="relative mx-auto max-w-7xl px-6 lg:px-8">
+<div class="grid gap-16 lg:grid-cols-2 lg:items-center">
+<div class="flex flex-col items-start gap-8 text-left max-w-2xl">
+<div class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-primary shadow-sm border border-primary/10 dark:bg-white/5 dark:text-pink-300 dark:border-white/10 transition-transform hover:scale-105 cursor-default">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+                                Summer Special
+                            </div>
+<h2 class="text-5xl font-black leading-[1.05] tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl text-balance">
+                                Scoops of <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-500">Happiness</span>,<br/> Delivered.
+                            </h2>
+<p class="text-xl leading-relaxed text-text-muted dark:text-slate-300 text-balance font-medium">
+                                Premium flavors, handmade waffle cones, and zero guilt. Order your favorite frozen treats and get them delivered frozen-fresh to your door in under 30 minutes.
+                            </p>
+<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+<button class="group flex items-center justify-center gap-2 rounded-2xl bg-primary px-8 py-4 text-lg font-bold text-white shadow-glow transition-all hover:bg-primary-dark hover:-translate-y-1 active:translate-y-0.5 active:shadow-none">
+                                    Start Ordering
+                                    <span class="material-symbols-outlined text-[20px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+<button class="flex items-center justify-center gap-2 rounded-2xl bg-white px-8 py-4 text-lg font-bold text-slate-700 shadow-sm border border-slate-200 transition-all hover:bg-slate-50 hover:border-slate-300 hover:text-slate-900 active:bg-slate-100 dark:bg-white/5 dark:border-white/10 dark:text-white dark:hover:bg-white/10">
+                                    View Menu
+                                </button>
+</div>
+<div class="flex items-center gap-4 mt-2">
+<div class="flex -space-x-3 overflow-hidden">
+<img alt="User avatar" class="inline-block h-10 w-10 rounded-full ring-2 ring-white dark:ring-background-dark object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLfaZVcLBUyr4L2e5HCFfW2RIbF9szhqSheujRFuYajFSZEt8mkWEWAAYK0bnNG6ZgtCfWE0_wZdyeWGro21mHcW17-H7qMr6UEJwVTuDa5-bIEBJqanoLusPwJRJYWfPT4vdbSjYzWghNgeWPCC9p9uDKJagmd11ipZmRllHGCfaP2gh2-pVTh4zUsKhOy2QD9yNUlY52ZoNOk3XTQb_8I8YRXCeImq2mCTtb_hjWm7oWtEY0o3gXMFaNaeSxDHYMLPf5zJxW24fT"/>
+<img alt="User avatar" class="inline-block h-10 w-10 rounded-full ring-2 ring-white dark:ring-background-dark object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDx_Jsi3Lu4IaCKNpOKMS-FEojISDz8EYfmPD8Dcd_VJ1WIi9IJaTRwTwYDph0q2_KOsElUsPOpWIMHlHKrpYC-_FAJGFh_cTrgbzk8CYB5HA8FM23FbLeCOS78nShu-ob8VDyb-V4FZogU8JTjCooPAaOs86yTqOnfHS8XS-S-zB2ow28YLnw6iQhpXk_SbK8NIqjxZnHHA2moEPb_o-RBPQMLJy0rMumdDVjHuCEYA3VCiitQfKix2SCjBf-RdBo3wtg7VXl99ieq"/>
+<img alt="User avatar" class="inline-block h-10 w-10 rounded-full ring-2 ring-white dark:ring-background-dark object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAook4NwbDjhSs3nyyu_-1x9P_0qFjFhDer3h7VCEq3p-aqjx_Wr37ujXEH9FIc_Ah16oj4CcfP1t6_3KbylucbTXC2vlmJ1AdqdlhPwu_RscCmXV3VYV1VM332guZ6yubHXQOAFnJ75G4o6dlFkpWi2e6xcSPT3fHJ1dDHiFQSX0FchJKkL5wz5fi3dJeVrU7Tk41nKfclsDU_eKgmPp-M17pnvIYS99YtHN5777R5XQL2I0YBodUBo8Dpqz-0KCV0NfIvq1uiyDDR"/>
+</div>
+<p class="text-sm font-medium text-slate-600 dark:text-slate-400">Join <span class="text-slate-900 dark:text-white font-bold">5,000+</span> happy scoopers</p>
+</div>
+</div>
+<div class="relative lg:block perspective-1000">
+<div class="relative mx-auto aspect-square max-w-lg overflow-hidden rounded-[3rem] bg-gradient-to-br from-white to-pink-50 shadow-2xl ring-1 ring-black/5 dark:from-white/5 dark:to-white/10 dark:ring-white/10 rotate-2 hover:rotate-0 transition-transform duration-700 ease-out" data-alt="Close up of delicious strawberry ice cream scoops in a bowl with mint garnish">
+<div class="absolute inset-0 bg-cover bg-center scale-105 hover:scale-100 transition-transform duration-700" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDSCl4swLAGNfnMlRICuudppm30teCTNywXQmmwG2eG1uBtXrf9kJrFUFNKOSXLxIPtnRpzXIgo-l6JRbqEQ9-L7SC_khzpQ97MI6DeDwss2rNm8deWlTqv-NlIVTGqXfEk4uhFbwikBvCqGMGB_XwgJqNtIb0e19DL52ErNsjlnbP__rzGwg0UJHzbUaSVobq-kkhrA3bv6chMaHs6KsZZjlDgEg7xJMUj4Ko1VTqApPvld8Fy6Gfe4x_W2kI1joV3i570HO4dewun');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-8 left-8 right-8">
+<div class="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-2xl">
+<div class="flex items-center justify-between text-white">
+<div>
+<p class="text-xs font-bold uppercase tracking-wider opacity-80">Featured</p>
+<p class="text-lg font-bold">Strawberry Mint Splash</p>
+</div>
+<div class="bg-white text-primary font-bold px-3 py-1 rounded-lg text-sm">
+                                            $6.50
+                                        </div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute -right-8 -bottom-8 w-24 h-24 bg-yellow-400 rounded-full blur-2xl opacity-20 animate-pulse"></div>
+<div class="absolute -left-4 -top-4 w-32 h-32 bg-primary rounded-full blur-3xl opacity-20"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-background-light py-20 dark:bg-background-dark relative" id="menu">
+<div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" style="background-image: radial-gradient(#ee2b5b 1px, transparent 1px); background-size: 24px 24px;"></div>
+<div class="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
+<div class="mb-12 flex flex-col items-start justify-between gap-6 border-b border-slate-200 pb-8 dark:border-white/10 lg:flex-row lg:items-end">
+<div>
+<h3 class="text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">Our Flavors</h3>
+<p class="mt-3 text-lg text-slate-500 dark:text-slate-400">Choose your scoop style and toppings. Hand-picked daily.</p>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="rounded-full bg-slate-900 px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-slate-900/20 transition-all hover:bg-slate-800 hover:-translate-y-0.5 dark:bg-white dark:text-slate-900">All Flavors</button>
+<button class="rounded-full bg-white px-6 py-2.5 text-sm font-bold text-slate-600 shadow-sm ring-1 ring-slate-200 transition-all hover:bg-slate-50 hover:text-slate-900 hover:ring-slate-300 dark:bg-white/5 dark:text-slate-400 dark:ring-white/10 dark:hover:bg-white/10 dark:hover:text-white">Vegan</button>
+<button class="rounded-full bg-white px-6 py-2.5 text-sm font-bold text-slate-600 shadow-sm ring-1 ring-slate-200 transition-all hover:bg-slate-50 hover:text-slate-900 hover:ring-slate-300 dark:bg-white/5 dark:text-slate-400 dark:ring-white/10 dark:hover:bg-white/10 dark:hover:text-white">Best Sellers</button>
+<button class="rounded-full bg-white px-6 py-2.5 text-sm font-bold text-slate-600 shadow-sm ring-1 ring-slate-200 transition-all hover:bg-slate-50 hover:text-slate-900 hover:ring-slate-300 dark:bg-white/5 dark:text-slate-400 dark:ring-white/10 dark:hover:bg-white/10 dark:hover:text-white">Seasonal</button>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+<div class="group relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-soft transition-all duration-300 hover:-translate-y-2 hover:shadow-hover dark:bg-card-dark dark:shadow-none dark:ring-1 dark:ring-white/10">
+<div class="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
+<div class="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Mint chocolate chip ice cream scoop" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCCf-v3CIbbeP4_-sy2lQCO6zVmycCsbK0_D61HZOWvb7mouIqWxgoK_xNVH1vNdUopwzkNi_91sxRBMXAISyI6v5Skswq9YSFBcQJl5dn09zPcGNVwmhnoy3sI0FPQ2wwV26VsOD_XqyFovnnOl8CoDOfWnNPwnScSt6dvinzGVo6-fXcu_jStJNWciYYy-EXHOQQ1RjjxKL0zzutAtinXBasZwsTxA3q9qMKsWMibosNdMcFzd0KbsZCu4tRmjmv2X3AVm6RQ7Bpy');">
+</div>
+<div class="absolute right-4 top-4 rounded-full bg-white/95 px-3 py-1.5 text-xs font-bold text-slate-900 shadow-sm backdrop-blur-md dark:bg-black/80 dark:text-white">
+                                    $4.50
+                                </div>
+<button class="absolute right-4 bottom-4 rounded-full bg-white p-2 text-slate-400 shadow-md transition-all hover:text-primary hover:scale-110 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 dark:bg-card-dark dark:text-slate-500">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-1 flex-col p-6">
+<div class="mb-5">
+<div class="flex justify-between items-start mb-1">
+<h4 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Midnight Mint</h4>
+<div class="flex items-center text-amber-400 text-xs gap-0.5">
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+<span class="font-bold text-slate-700 dark:text-slate-300 ml-1">4.8</span>
+</div>
+</div>
+<p class="text-sm font-medium text-slate-500 line-clamp-2 dark:text-slate-400 leading-relaxed">Fresh mint leaves blended with dark chocolate chips.</p>
+</div>
+<div class="mt-auto flex flex-col gap-4">
+<div class="relative flex w-full rounded-xl bg-slate-50 p-1.5 ring-1 ring-slate-100 dark:bg-white/5 dark:ring-white/5">
+<label class="relative z-10 flex flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-lg py-2 text-sm font-bold transition-all">
+<input checked="" class="peer sr-only" name="flavor1" type="radio" value="cone"/>
+<span class="text-slate-500 transition-colors peer-checked:text-primary dark:text-slate-400 dark:peer-checked:text-white z-10">Cone</span>
+<div class="absolute inset-0 hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-200 peer-checked:block dark:bg-primary dark:ring-0 transition-all"></div>
+</label>
+<label class="relative z-10 flex flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-lg py-2 text-sm font-bold transition-all">
+<input class="peer sr-only" name="flavor1" type="radio" value="cup"/>
+<span class="text-slate-500 transition-colors peer-checked:text-primary dark:text-slate-400 dark:peer-checked:text-white z-10">Cup</span>
+<div class="absolute inset-0 hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-200 peer-checked:block dark:bg-primary dark:ring-0 transition-all"></div>
+</label>
+</div>
+<button class="flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 py-3.5 text-sm font-bold text-white transition-all hover:bg-primary hover:shadow-lg hover:shadow-primary/25 active:scale-[0.98] dark:bg-white dark:text-slate-900 dark:hover:bg-primary dark:hover:text-white">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+                                        Add to Cart
+                                    </button>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-soft transition-all duration-300 hover:-translate-y-2 hover:shadow-hover dark:bg-card-dark dark:shadow-none dark:ring-1 dark:ring-white/10">
+<div class="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
+<div class="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Pink berry ice cream scoop" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA8xmFfQskoTnhZj_q23BwHuzAj2heTehMlnFmUPUsjPCKKHlsYiRkuYnCONyHQUVotM8o3xuwX7zyOBpQaJvLBrKhgVAgI48q98LJUMdO0v1JAPpePh6OJPVbR9RUFmqpMOmKJTg6MhgmGA1m6MMm83Q4j1Pskau8TcksKVp1neoupmeYL5uJH_cL7YRqSCG1O58JObmQq2BGzzqY_HhFqKzPQHDDlONqhnryF1I_Gm6kyOdiKCM38bDSaKTKTjeE16u322Wp7IaAD');">
+</div>
+<div class="absolute right-4 top-4 rounded-full bg-white/95 px-3 py-1.5 text-xs font-bold text-slate-900 shadow-sm backdrop-blur-md dark:bg-black/80 dark:text-white">
+                                    $5.00
+                                </div>
+<button class="absolute right-4 bottom-4 rounded-full bg-white p-2 text-slate-400 shadow-md transition-all hover:text-primary hover:scale-110 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 dark:bg-card-dark dark:text-slate-500">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-1 flex-col p-6">
+<div class="mb-5">
+<div class="flex justify-between items-start mb-1">
+<h4 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Berry Blast</h4>
+<div class="flex items-center text-amber-400 text-xs gap-0.5">
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+<span class="font-bold text-slate-700 dark:text-slate-300 ml-1">4.9</span>
+</div>
+</div>
+<p class="text-sm font-medium text-slate-500 line-clamp-2 dark:text-slate-400 leading-relaxed">A sweet and tangy mix of strawberries, raspberries, and blueberries.</p>
+</div>
+<div class="mt-auto flex flex-col gap-4">
+<div class="relative flex w-full rounded-xl bg-slate-50 p-1.5 ring-1 ring-slate-100 dark:bg-white/5 dark:ring-white/5">
+<label class="relative z-10 flex flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-lg py-2 text-sm font-bold transition-all">
+<input checked="" class="peer sr-only" name="flavor2" type="radio" value="cone"/>
+<span class="text-slate-500 transition-colors peer-checked:text-primary dark:text-slate-400 dark:peer-checked:text-white z-10">Cone</span>
+<div class="absolute inset-0 hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-200 peer-checked:block dark:bg-primary dark:ring-0 transition-all"></div>
+</label>
+<label class="relative z-10 flex flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-lg py-2 text-sm font-bold transition-all">
+<input class="peer sr-only" name="flavor2" type="radio" value="cup"/>
+<span class="text-slate-500 transition-colors peer-checked:text-primary dark:text-slate-400 dark:peer-checked:text-white z-10">Cup</span>
+<div class="absolute inset-0 hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-200 peer-checked:block dark:bg-primary dark:ring-0 transition-all"></div>
+</label>
+</div>
+<button class="flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 py-3.5 text-sm font-bold text-white transition-all hover:bg-primary hover:shadow-lg hover:shadow-primary/25 active:scale-[0.98] dark:bg-white dark:text-slate-900 dark:hover:bg-primary dark:hover:text-white">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+                                        Add to Cart
+                                    </button>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-soft transition-all duration-300 hover:-translate-y-2 hover:shadow-hover dark:bg-card-dark dark:shadow-none dark:ring-1 dark:ring-white/10">
+<div class="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
+<div class="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Vanilla bean ice cream scoop" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAPsgj2hEN561Jh2lQlL5jL-guXpBBRh0mvHi9fDj-wIZ-WYIXHviSB75mqMb2zJjFnCPYewPwlv2VBq5WhTlyvNVmsPK6WCb0qed8tIrTBV9RrQmuzHF_Z7v_MfyxkHurpXoDwvJ3sfNpJyOzHNuFI9MAurUd6voeBcxkulyBPTFIHvljmg5wiEJUO1geV-0lpg55fclSBinxgNpg02877GjxS4vqYD1GgMK50g6tJnwJOIcms6g0FO_8bWAONqy_KoV4yGSg2-8Ei');">
+</div>
+<div class="absolute right-4 top-4 rounded-full bg-white/95 px-3 py-1.5 text-xs font-bold text-slate-900 shadow-sm backdrop-blur-md dark:bg-black/80 dark:text-white">
+                                    $4.00
+                                </div>
+<button class="absolute right-4 bottom-4 rounded-full bg-white p-2 text-slate-400 shadow-md transition-all hover:text-primary hover:scale-110 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 dark:bg-card-dark dark:text-slate-500">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-1 flex-col p-6">
+<div class="mb-5">
+<div class="flex justify-between items-start mb-1">
+<h4 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Classic Vanilla</h4>
+<div class="flex items-center text-amber-400 text-xs gap-0.5">
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+<span class="font-bold text-slate-700 dark:text-slate-300 ml-1">4.7</span>
+</div>
+</div>
+<p class="text-sm font-medium text-slate-500 line-clamp-2 dark:text-slate-400 leading-relaxed">Made with real Madagascar vanilla beans for a rich, creamy taste.</p>
+</div>
+<div class="mt-auto flex flex-col gap-4">
+<div class="relative flex w-full rounded-xl bg-slate-50 p-1.5 ring-1 ring-slate-100 dark:bg-white/5 dark:ring-white/5">
+<label class="relative z-10 flex flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-lg py-2 text-sm font-bold transition-all">
+<input checked="" class="peer sr-only" name="flavor3" type="radio" value="cone"/>
+<span class="text-slate-500 transition-colors peer-checked:text-primary dark:text-slate-400 dark:peer-checked:text-white z-10">Cone</span>
+<div class="absolute inset-0 hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-200 peer-checked:block dark:bg-primary dark:ring-0 transition-all"></div>
+</label>
+<label class="relative z-10 flex flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-lg py-2 text-sm font-bold transition-all">
+<input class="peer sr-only" name="flavor3" type="radio" value="cup"/>
+<span class="text-slate-500 transition-colors peer-checked:text-primary dark:text-slate-400 dark:peer-checked:text-white z-10">Cup</span>
+<div class="absolute inset-0 hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-200 peer-checked:block dark:bg-primary dark:ring-0 transition-all"></div>
+</label>
+</div>
+<button class="flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 py-3.5 text-sm font-bold text-white transition-all hover:bg-primary hover:shadow-lg hover:shadow-primary/25 active:scale-[0.98] dark:bg-white dark:text-slate-900 dark:hover:bg-primary dark:hover:text-white">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+                                        Add to Cart
+                                    </button>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-soft transition-all duration-300 hover:-translate-y-2 hover:shadow-hover dark:bg-card-dark dark:shadow-none dark:ring-1 dark:ring-white/10">
+<div class="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
+<div class="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Rich chocolate fudge ice cream scoop" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuClCkVeSdhhq6ciYm09tkUnTxMbSFTGsChi-Nj3SkC5HMlLXaWxhwkPRLEmrPXVGZFVhfM_P_OTrKBQcS0ncgvIukv-H19IuGLi2UHjsQ_rU_LCm8MmX16PPnR4VeJbYIJu03LMtxq90P_JWrxMcgLmorMq_YvPJL3iqrB46M_ncEubqLeIb164kBdlgdxlBmT2YKaF8odZFnhZ1HK6fBtTdutCztMo-Y3hXLU-QrPPZMEP-jYpcNGY4oeUJ80jcyQRIYGr1EqTO7M2');">
+</div>
+<div class="absolute right-4 top-4 rounded-full bg-white/95 px-3 py-1.5 text-xs font-bold text-slate-900 shadow-sm backdrop-blur-md dark:bg-black/80 dark:text-white">
+                                    $5.50
+                                </div>
+<button class="absolute right-4 bottom-4 rounded-full bg-white p-2 text-slate-400 shadow-md transition-all hover:text-primary hover:scale-110 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 dark:bg-card-dark dark:text-slate-500">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-1 flex-col p-6">
+<div class="mb-5">
+<div class="flex justify-between items-start mb-1">
+<h4 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Chocolate Fudge</h4>
+<div class="flex items-center text-amber-400 text-xs gap-0.5">
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+<span class="font-bold text-slate-700 dark:text-slate-300 ml-1">5.0</span>
+</div>
+</div>
+<p class="text-sm font-medium text-slate-500 line-clamp-2 dark:text-slate-400 leading-relaxed">Decadent chocolate ice cream swirled with thick hot fudge.</p>
+</div>
+<div class="mt-auto flex flex-col gap-4">
+<div class="relative flex w-full rounded-xl bg-slate-50 p-1.5 ring-1 ring-slate-100 dark:bg-white/5 dark:ring-white/5">
+<label class="relative z-10 flex flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-lg py-2 text-sm font-bold transition-all">
+<input checked="" class="peer sr-only" name="flavor4" type="radio" value="cone"/>
+<span class="text-slate-500 transition-colors peer-checked:text-primary dark:text-slate-400 dark:peer-checked:text-white z-10">Cone</span>
+<div class="absolute inset-0 hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-200 peer-checked:block dark:bg-primary dark:ring-0 transition-all"></div>
+</label>
+<label class="relative z-10 flex flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-lg py-2 text-sm font-bold transition-all">
+<input class="peer sr-only" name="flavor4" type="radio" value="cup"/>
+<span class="text-slate-500 transition-colors peer-checked:text-primary dark:text-slate-400 dark:peer-checked:text-white z-10">Cup</span>
+<div class="absolute inset-0 hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-200 peer-checked:block dark:bg-primary dark:ring-0 transition-all"></div>
+</label>
+</div>
+<button class="flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 py-3.5 text-sm font-bold text-white transition-all hover:bg-primary hover:shadow-lg hover:shadow-primary/25 active:scale-[0.98] dark:bg-white dark:text-slate-900 dark:hover:bg-primary dark:hover:text-white">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+                                        Add to Cart
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="mt-auto border-t border-slate-200 bg-white pt-16 pb-12 dark:border-white/5 dark:bg-background-dark shadow-[0_-10px_40px_-10px_rgba(0,0,0,0.05)]">
+<div class="mx-auto max-w-7xl px-6 lg:px-8">
+<div class="grid grid-cols-1 gap-12 lg:grid-cols-4 lg:gap-8">
+<div class="flex flex-col items-start gap-4">
+<div class="flex items-center gap-3">
+<div class="flex size-9 items-center justify-center rounded-xl bg-primary text-white shadow-md shadow-primary/20">
+<span class="material-symbols-outlined text-[20px]">icecream</span>
+</div>
+<h2 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Drop Cream</h2>
+</div>
+<p class="text-sm leading-6 text-slate-500 dark:text-slate-400 max-w-xs">
+                        Spreading happiness one scoop at a time. Crafted with love, delivered with care since 2024.
+                    </p>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white">Company</h3>
+<nav class="flex flex-col gap-3">
+<a class="text-sm font-medium text-slate-600 transition-colors hover:text-primary dark:text-slate-400 dark:hover:text-white" href="#">About Us</a>
+<a class="text-sm font-medium text-slate-600 transition-colors hover:text-primary dark:text-slate-400 dark:hover:text-white" href="#">Careers</a>
+<a class="text-sm font-medium text-slate-600 transition-colors hover:text-primary dark:text-slate-400 dark:hover:text-white" href="#">Blog</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white">Support</h3>
+<nav class="flex flex-col gap-3">
+<a class="text-sm font-medium text-slate-600 transition-colors hover:text-primary dark:text-slate-400 dark:hover:text-white" href="#">Help Center</a>
+<a class="text-sm font-medium text-slate-600 transition-colors hover:text-primary dark:text-slate-400 dark:hover:text-white" href="#">Privacy Policy</a>
+<a class="text-sm font-medium text-slate-600 transition-colors hover:text-primary dark:text-slate-400 dark:hover:text-white" href="#">Terms of Service</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white">Stay Sweet</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Subscribe for promos &amp; new flavors!</p>
+<div class="flex gap-2">
+<input class="w-full rounded-lg border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-primary dark:border-white/10 dark:bg-white/5 dark:text-white dark:focus:ring-primary/50" placeholder="Email address" type="email"/>
+<button class="flex items-center justify-center rounded-lg bg-primary px-3 py-2 text-white shadow-sm transition hover:bg-primary-dark">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+<div class="mt-4 flex gap-4">
+<a class="flex size-9 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition hover:bg-primary hover:text-white hover:shadow-lg hover:shadow-primary/30 dark:bg-white/5 dark:text-slate-400 dark:hover:bg-primary dark:hover:text-white" href="#">
+<svg class="size-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+</svg>
+</a>
+<a class="flex size-9 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition hover:bg-primary hover:text-white hover:shadow-lg hover:shadow-primary/30 dark:bg-white/5 dark:text-slate-400 dark:hover:bg-primary dark:hover:text-white" href="#">
+<svg class="size-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path>
+</svg>
+</a>
+<a class="flex size-9 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition hover:bg-primary hover:text-white hover:shadow-lg hover:shadow-primary/30 dark:bg-white/5 dark:text-slate-400 dark:hover:bg-primary dark:hover:text-white" href="#">
+<svg class="size-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-12 flex flex-col items-center justify-between border-t border-slate-100 pt-8 dark:border-white/5 sm:flex-row gap-4">
+<p class="text-xs font-medium text-slate-400 dark:text-slate-500">
+                    © 2024 Drop Cream Inc. All rights reserved.
+                </p>
+<div class="flex gap-4">
+<p class="flex items-center gap-1.5 text-xs font-medium text-slate-400 dark:text-slate-500">
+                    Made with <span class="material-symbols-outlined text-[16px] text-primary animate-pulse">favorite</span> by Designers
+                </p>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div aria-modal="true" class="hidden fixed inset-0 z-50 flex justify-end" role="dialog">
+<div class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity"></div>
+<div class="relative flex w-full max-w-sm flex-col bg-white shadow-2xl dark:bg-[#1a1a1a]">
+<div class="flex items-center justify-between border-b border-slate-100 px-6 py-5 dark:border-white/10">
+<h2 class="text-lg font-bold text-slate-900 dark:text-white">Your Scoops (3)</h2>
+<button class="rounded-full p-2 text-slate-400 transition hover:bg-slate-100 hover:text-slate-600 dark:text-slate-500 dark:hover:bg-white/10 dark:hover:text-white">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex-1 overflow-y-auto px-6 py-6">
+<div class="flex flex-col gap-8">
+<div class="flex gap-4">
+<div class="h-20 w-20 flex-shrink-0 overflow-hidden rounded-xl bg-gray-100 ring-1 ring-slate-100 dark:ring-white/5">
+<div class="h-full w-full bg-cover bg-center" data-alt="Berry blast ice cream thumbnail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBOn7UqgroH1G6kOghUho0914bpommPSNsY-eNQ2gkwC_hZyHMKHGd9MeGP3vNUrJ3HCtn25ofXJJhtOqdYp_fCvFGOGpqjmjPaoIrLBI9PsYjspwcwvf4g7tBtsxoCRYgM_WjPQawJWg9wHTbD8-MvT9XzymXme8gasXWEm2318g9JXuqW7pT1I-SZHjYlTWkFTWS6a9eiLxP2HXieWR1U8jSTp2kBqelyGs1icuURfTtYx0y2qpP4Kr58fzeiVYr-SwfK-U4TQjyC');"></div>
+</div>
+<div class="flex flex-1 flex-col justify-between py-0.5">
+<div>
+<h3 class="text-base font-bold text-slate-900 dark:text-white">Berry Blast</h3>
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400">Cup • Regular</p>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-sm font-bold text-primary">$5.00</p>
+<div class="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-1 py-0.5 shadow-sm dark:border-white/10 dark:bg-white/5">
+<button class="flex h-6 w-6 items-center justify-center rounded text-xs text-slate-400 hover:text-primary dark:text-slate-400 dark:hover:text-white">-</button>
+<span class="w-3 text-center text-xs font-bold text-slate-900 dark:text-white">1</span>
+<button class="flex h-6 w-6 items-center justify-center rounded text-xs text-slate-400 hover:text-primary dark:text-slate-400 dark:hover:text-white">+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="h-20 w-20 flex-shrink-0 overflow-hidden rounded-xl bg-gray-100 ring-1 ring-slate-100 dark:ring-white/5">
+<div class="h-full w-full bg-cover bg-center" data-alt="Midnight mint ice cream thumbnail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCYZeivLM57_2lFrXVtkqWmz7Afj6JdTinlsNQRv0UAahPEhUwDrPU3kYDH0eujL0ZcQaJD5MZUDGr32VrSKmBPzjjjGGPluafIqTMertLh2gWp8_UtkxdvBk9Dj2SL89SDTBf0p4OB33Yx9v1Oexrp7Jl6ek1uWmGdnc2fLimXtXAuMm-RoFjB0zVK3LKHyNR3kZo-RElMwgXzae_cwvUcPYtgQ8cSPjt7zizbXYBW_W9W2gM89NFeRg0PoYWAs2YEtcslLf4BJyfk');"></div>
+</div>
+<div class="flex flex-1 flex-col justify-between py-0.5">
+<div>
+<h3 class="text-base font-bold text-slate-900 dark:text-white">Midnight Mint</h3>
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400">Cone • Regular</p>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-sm font-bold text-primary">$9.00</p>
+<div class="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-1 py-0.5 shadow-sm dark:border-white/10 dark:bg-white/5">
+<button class="flex h-6 w-6 items-center justify-center rounded text-xs text-slate-400 hover:text-primary dark:text-slate-400 dark:hover:text-white">-</button>
+<span class="w-3 text-center text-xs font-bold text-slate-900 dark:text-white">2</span>
+<button class="flex h-6 w-6 items-center justify-center rounded text-xs text-slate-400 hover:text-primary dark:text-slate-400 dark:hover:text-white">+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-slate-100 bg-white p-6 shadow-[0_-4px_20px_-1px_rgba(0,0,0,0.05)] dark:border-white/10 dark:bg-[#1a1a1a]">
+<div class="mb-4 flex items-center justify-between">
+<span class="text-sm font-medium text-slate-500 dark:text-slate-400">Subtotal</span>
+<span class="text-xl font-extrabold text-slate-900 dark:text-white">$14.00</span>
+</div>
+<button class="group w-full flex items-center justify-center gap-2 rounded-xl bg-primary py-4 text-base font-bold text-white shadow-lg shadow-primary/25 transition-all hover:bg-primary-dark hover:shadow-primary/40 active:scale-[0.98]">
+                    Checkout Now
+                    <span class="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+
+</body></html>
