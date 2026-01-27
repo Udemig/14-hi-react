@@ -1,3 +1,12 @@
+type DriveType =
+  | "Front-Wheel Drive"
+  | "Rear-Wheel Drive"
+  | "4-Wheel or All-Wheel Drive"
+  | "All-Wheel Drive"
+  | "4-Wheel Drive"
+  | "Part-time 4-Wheel Drive"
+  | "2-Wheel Drive";
+
 export interface Car {
   make: string;
   model: string;
@@ -25,7 +34,7 @@ export interface Car {
   combineduf: number;
   cylinders: number;
   displ: number;
-  drive: string;
+  drive: DriveType;
   engid: string;
   eng_dscr: string[];
   fescore: number | null;
