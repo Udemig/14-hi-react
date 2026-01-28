@@ -74,7 +74,7 @@
 /* Modern component styles */
 @layer components {
   .max-width {
-    @apply max-w-[1640px] mx-auto;
+    @apply max-w-410 mx-auto;
   }
 
   .padding-x {
@@ -105,7 +105,7 @@
 
   /* Modern Hero Section */
   .hero {
-    @apply flex xl:flex-row flex-col gap-8 relative z-0 max-w-[1440px] mx-auto items-center;
+    @apply flex xl:flex-row flex-col gap-8 relative z-0 max-w-410 mx-auto items-center;
   }
 
   .hero-title {

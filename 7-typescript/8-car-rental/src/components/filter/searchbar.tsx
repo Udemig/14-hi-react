@@ -24,6 +24,7 @@ const Searchbar: FC = () => {
       searchParams.delete("model");
     }
 
+    searchParams.set("page", "1");
     setSearchParams(searchParams);
   };
 
