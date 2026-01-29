@@ -36,9 +36,12 @@ const Searchbar: FC = () => {
       {/* Marka */}
       <div className="searchbar-item items-end">
         <div className="w-full flex flex-col z-2">
-          <label className="font-semibold mb-2 text-sm">Marka</label>
+          <label htmlFor="marka" className="font-semibold mb-2 text-sm">
+            Marka
+          </label>
 
           <ReactSelect
+            inputId="marka"
             styles={selectStyles}
             options={options}
             value={make ? { label: make, value: make } : null}
@@ -47,21 +50,24 @@ const Searchbar: FC = () => {
           />
         </div>
 
-        <button type="submit" className="mb-1 search-btn sm:hidden">
-          <img src="/search.svg" className="size-6" />
+        <button type="submit" className="mb-1 search-btn sm:hidden" aria-label="ara">
+          <img src="/search.svg" className="size-6" alt="ara" />
         </button>
       </div>
 
       {/* Model */}
       <div className="searchbar-item items-start flex flex-col">
-        <label className="font-semibold mb-2 text-sm">Model</label>
+        <label htmlFor="model" className="font-semibold mb-2 text-sm">
+          Model
+        </label>
 
         <div className="w-full flex items-center">
           <div className="relative flex-1">
-            <img src="/model-icon.png" className="size-6 absolute left-8 top-1/2 -translate-1/2 z-1" />
+            <img src="/model-icon.png" className="size-6 absolute left-8 top-1/2 -translate-1/2 z-1" alt="model icon" />
 
             <input
               type="text"
+              id="model"
               className="searchbar-input"
               value={model}
               onChange={(e) => setModel(e.target.value)}
@@ -69,8 +75,8 @@ const Searchbar: FC = () => {
             />
           </div>
 
-          <button type="submit" className="mb-1 search-btn">
-            <img src="/search.svg" className="size-6" />
+          <button type="submit" className="mb-1 search-btn" aria-label="ara">
+            <img src="/search.svg" className="size-6" alt="ara" />
           </button>
         </div>
       </div>

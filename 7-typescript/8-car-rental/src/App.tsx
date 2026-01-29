@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Home from "./pages/home";
+import NotFound from "./pages/not-found";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <main className="relative z-10 flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
 

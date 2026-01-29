@@ -22,7 +22,7 @@ const Modal: FC<Props> = ({ isOpen, close, car }) => {
             transition={{ duration: 0.2 }}
             className="car-details-dialog-panel w-[90%] sm:min-w-150 min-h-[70vh]"
           >
-            <button onClick={close} className="car-details-close-btn cursor-pointer">
+            <button onClick={close} className="car-details-close-btn cursor-pointer" aria-label="modal'ı kapat">
               X
             </button>
 

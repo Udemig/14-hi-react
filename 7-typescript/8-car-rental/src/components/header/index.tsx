@@ -9,6 +9,7 @@ const Header: FC = () => {
         <Link to="/" className="flex items-center gap-3">
           <img
             src="/logo.png"
+            alt="siyah ve beyaz renklerinde bmw logosu"
             width={50}
             height={50}
             className="drop-shadow-xl hover:scale-105 transition-transform duraion-300"
