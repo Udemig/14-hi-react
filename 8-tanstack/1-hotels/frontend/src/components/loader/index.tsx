@@ -1,7 +1,12 @@
+import { LoaderCircle } from "lucide-react";
 import type { FC } from "react";
 
 const Loader: FC = () => {
-  return <div>Loader</div>;
+  return (
+    <div className="flex justify-center items-center my-20 lg:my-30">
+      <LoaderCircle className="text-blue-500 animate-spin" />
+    </div>
+  );
 };
 
 export default Loader;
