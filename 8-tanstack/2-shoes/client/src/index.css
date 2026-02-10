@@ -32,4 +32,12 @@
   .spacing {
     @apply py-8 px-4 md:px-8 lg:px-12 xl:px-16;
   }
+
+  .submit-btn {
+    @apply w-full flex justify-center rounded-md bg-indigo-600 px-3 py-1.5 font-semibold text-white hover:bg-indigo-500 shadow-sm;
+  }
+
+  .header-item {
+    @apply px-6 py-2 hover:bg-zinc-500/30 transition cursor-pointer whitespace-nowrap w-full;
+  }
 }

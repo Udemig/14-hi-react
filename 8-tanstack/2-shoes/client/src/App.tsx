@@ -4,6 +4,8 @@ import Login from "./page/login";
 import Register from "./page/register";
 import Home from "./page/home";
 import Layout from "./components/layout";
+import Dashboard from "./page/dashboard";
+import Protected from "./components/protected";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +21,19 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: (
+          <Protected>
+            <Home />
+          </Protected>
+        ),
+      },
+      {
+        path: "/admin/dashboard",
+        element: (
+          <Protected allowedRoles={["admin"]}>
+            <Dashboard />
+          </Protected>
+        ),
       },
     ],
   },
