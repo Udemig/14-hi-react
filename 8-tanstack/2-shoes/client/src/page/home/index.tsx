@@ -1,9 +1,16 @@
 import type { FC } from "react";
+import Hero from "./hero";
+import Title from "./title";
+import List from "./list";
 
 const Home: FC = () => {
   return (
     <div>
-      <h1 className="text-4xl text-center my-50">Anasayfa</h1>
+      <Hero />
+
+      <Title />
+
+      <List />
     </div>
   );
 };

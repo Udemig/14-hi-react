@@ -27,3 +27,31 @@ export interface Response<T> {
   message: string;
   data: T;
 }
+
+// Ürün Tip
+export interface Product {
+  name: string;
+  picture: string[];
+  description: string;
+  isNew: boolean;
+  discount: number;
+  size: string;
+  color: string;
+  gender: "women" | "men";
+  price: number;
+  createdAt: string;
+  updatedAt: string;
+  id: string;
+}
+
+// Formdan alınan ürün tipi
+export interface ProductValues {
+  name: string;
+  price: number;
+  discount: number;
+  color: string;
+  size: string;
+  description: string;
+  isNew: boolean;
+  gender: "men" | "women" | "unisex";
+}
