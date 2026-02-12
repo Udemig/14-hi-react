@@ -3,6 +3,7 @@ import type { FC } from "react";
 import { INPUT_ARRAY } from "../../constants";
 import FormField from "./form-field";
 import type { Product, ProductValues } from "../../types";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   mutate: (data: any) => void;
@@ -11,19 +12,23 @@ interface Props {
 }
 
 const ProductForm: FC<Props> = ({ mutate, isPending, data }) => {
+  const navigate = useNavigate();
+
   const initialValues: ProductValues = {
-    name: "",
-    price: 0,
-    discount: 0,
-    color: "",
-    size: "",
-    description: "",
-    isNew: false,
-    gender: "men",
+    name: data?.name || "",
+    price: data?.price || 0,
+    discount: data?.discount || 0,
+    color: data?.color || "",
+    size: data?.size || "",
+    description: data?.description || "",
+    isNew: data?.isNew || false,
+    gender: data?.gender || "men",
   };
 
   const handleSubmit = (values: ProductValues) => {
     // mutasyon api isteği at
+    mutate(data ? { id: data.id, data: values } : values);
+    navigate("/admin/dashboard");
   };
 
   return (

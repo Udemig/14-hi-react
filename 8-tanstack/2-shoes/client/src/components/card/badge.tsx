@@ -6,7 +6,7 @@ interface Props {
 }
 
 const Badge: FC<Props> = ({ product }) => {
-  if (product.discount < 0 || !product.isNew) return;
+  if (product.discount <= 0 && !product.isNew) return;
 
   return (
     <div
