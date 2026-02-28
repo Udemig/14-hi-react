@@ -10,6 +10,9 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  /* Yeni fontlarımızı ekledik */
+  --font-play: var(--font-play);
+  --font-show: var(--font-show);
 }
 
 @media (prefers-color-scheme: dark) {

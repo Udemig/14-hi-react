@@ -1,0 +1,45 @@
+import { BasketRes, Product, URLRes } from "@/types";
+
+// api adresi / kullanıcı id'si
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+const userId = process.env.NEXT_PUBLIC_USER_ID;
+
+// bir ürünü satın al
+export const checkoutSingleItem = async (grocery: Product, quantity: number): URLRes => {
+  const body = {
+    grocery: grocery._id,
+    quantity,
+    customerInfo: {
+      userId,
+      name: "Furkan Evin",
+      phone: "555 666 77 88",
+      deliveryAddress: "İstanbul Türkiye 123sk no:45 d:7",
+      isDelivery: true,
+    },
+  };
+
+  const res = await fetch(`${BASE_URL}/api/checkout`, {
+    method: "POST",
+    body: JSON.stringify(body),
+    headers: { "Content-Type": "application/json" },
+  });
+
+  return res.json();
+};
+
+// sepete ürün ekle
+export const addToBasket = async (groceryId: string, quantity: number): Promise<void> => {
+  const res = await fetch(`${BASE_URL}/api/cart`, {
+    method: "POST",
+    body: JSON.stringify({ groceryId, quantity, userId }),
+  });
+
+  return res.json();
+};
+
+// sepetteki ürünleri al
+export const getBasket = async (): BasketRes => {
+  const res = await fetch(`${BASE_URL}/api/cart?userId=${userId}`);
+
+  return res.json();
+};

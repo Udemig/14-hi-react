@@ -15,8 +15,6 @@ const Movie = () => {
   const [error, setError] = useState(null);
   const [movie, setMovie] = useState(null);
 
-  console.log(movie);
-
   useEffect(() => {
     const params = {
       append_to_response: "credits,videos",

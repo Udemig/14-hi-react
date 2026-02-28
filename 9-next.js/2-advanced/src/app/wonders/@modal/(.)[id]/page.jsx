@@ -1,6 +1,11 @@
 "use client";
 
+// relative import
+// import { data } from "../../../../utils/constants";
+
+// absolute import
 import { data } from "@/utils/constants";
+
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 
@@ -18,6 +23,14 @@ const Page = () => {
   const handleClose = () => {
     // 1 sayfa geriye yönlendir
     router.back();
+    // 1 sayfa ileriye yönlendir
+    router.forward();
+    // belirli bir sayfaya yönlendir
+    router.push("/home");
+    // belirli bir sayfaya yönlendir - Geçmişten gizleyerek yönlendirir
+    router.replace();
+    // sayfayı yeniden renderlar
+    router.refresh();
   };
 
   return (

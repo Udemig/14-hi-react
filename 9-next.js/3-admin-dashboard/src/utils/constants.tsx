@@ -1,0 +1,127 @@
+import { TiHome } from "react-icons/ti";
+import { FaUsers, FaHeart, FaBox, FaChartArea, FaDiceD6, FaCog } from "react-icons/fa";
+import { IoIosPricetags } from "react-icons/io";
+import type { CardItem, InputItem, NavItem, OptionItem } from "../types";
+import icon1 from "@/assets/images/icon-1.webp";
+import icon2 from "@/assets/images/icon-2.webp";
+import icon3 from "@/assets/images/icon-3.webp";
+import icon4 from "@/assets/images/icon-4.png";
+
+export const links: NavItem[] = [
+  {
+    icon: <TiHome />,
+    name: "Anasayfa",
+    url: "/",
+  },
+  {
+    icon: <FaDiceD6 />,
+    name: "Ürünler",
+    url: "/products",
+  },
+  {
+    icon: <FaUsers />,
+    name: "Kullanıcılar",
+    url: "/users",
+  },
+  {
+    icon: <IoIosPricetags />,
+    name: "Siparişler",
+    url: "/orders",
+  },
+  {
+    icon: <FaChartArea />,
+    name: "Grafikler",
+  },
+  {
+    icon: <FaHeart />,
+    name: "Favoriler",
+  },
+  {
+    icon: <FaBox />,
+    name: "Envanter",
+  },
+  {
+    icon: <FaCog />,
+    name: "Ayarlar",
+  },
+];
+
+export const cards: CardItem[] = [
+  {
+    icon: icon1,
+    label: "Toplam Kullanıcı",
+    value: 1675,
+  },
+  {
+    icon: icon2,
+    label: "Toplam Sipariş",
+    value: 312,
+  },
+  {
+    icon: icon3,
+    label: "Toplam Satış",
+    value: "$" + (73486236).toLocaleString(),
+  },
+  {
+    icon: icon4,
+    label: "Toplam Ürün",
+    value: 1453,
+  },
+];
+
+export const inputs: InputItem[] = [
+  {
+    label: "Ürün Adı",
+    name: "name",
+    type: "text",
+  },
+  {
+    label: "Marka",
+    name: "brand",
+    type: "text",
+  },
+  {
+    label: "Fiyat (₺)",
+    name: "price",
+    type: "number",
+    step: 0.01,
+    min: 0,
+    max: 1000000,
+  },
+  {
+    label: "Stok",
+    name: "stock",
+    type: "number",
+    step: 1,
+    min: 0,
+    max: 1000000,
+  },
+  {
+    label: "Rayting (0-5)",
+    name: "rating",
+    type: "number",
+    defaultValue: 0,
+    step: 0.1,
+    min: 0,
+    max: 5,
+  },
+  {
+    label: "Yorum Sayısı",
+    name: "reviews_count",
+    type: "number",
+    defaultValue: 0,
+    step: 1,
+    min: 0,
+    max: 1000000,
+  },
+];
+
+export const categories: OptionItem[] = [
+  { label: "Kategori Seçiniz", value: "" },
+  { label: "Elektronik", value: "Electronics" },
+  { label: "Giyim", value: "Clothing" },
+  { label: "Ayakkabı", value: "Shoes" },
+  { label: "Aksesuar", value: "Accessories" },
+  { label: "Ev", value: "Home" },
+  { label: "Kitap", value: "Books" },
+];
