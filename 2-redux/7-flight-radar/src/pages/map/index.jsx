@@ -12,11 +12,11 @@ const Map = () => {
   const { flights } = useSelector((store) => store.flight);
   const { flightId, info, isLoading, route } = useSelector((store) => store.detail);
 
-  useEffect(() => {
-    const id = setInterval(() => dispatch(getFlights()), 10000);
+  // useEffect(() => {
+  //   const id = setInterval(() => dispatch(getFlights()), 10000);
 
-    return () => clearInterval(id);
-  }, []);
+  //   return () => clearInterval(id);
+  // }, []);
 
   return (
     <MapContainer center={[38.95342, 35.428109]} zoom={6} scrollWheelZoom={true}>

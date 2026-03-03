@@ -29,19 +29,22 @@ const orderItemSchema = new Schema<IOrderItem>(
     price: { type: Number, required: true },
     name: { type: String, required: true },
   },
-  { _id: false }
+  { _id: false },
 );
 
-const orderSchema = new Schema<IOrder>({
-  items: [orderItemSchema],
-  total_amount: { type: Number, required: true },
-  currency: { type: String, default: "TRY" },
-  customer_id: { type: String, required: true },
-  customer_name: { type: String, required: true },
-  customer_phone: { type: String, required: true },
-  delivery_address: String,
-  is_delivery: { type: Boolean, default: false },
-});
+const orderSchema = new Schema<IOrder>(
+  {
+    items: [orderItemSchema],
+    total_amount: { type: Number, required: true },
+    currency: { type: String, default: "TRY" },
+    customer_id: { type: String, required: true },
+    customer_name: { type: String, required: true },
+    customer_phone: { type: String, required: true },
+    delivery_address: String,
+    is_delivery: { type: Boolean, default: false },
+  },
+  { timestamps: true },
+);
 
 const Order = mongoose.models.Order || mongoose.model<IOrder>("Order", orderSchema);
 

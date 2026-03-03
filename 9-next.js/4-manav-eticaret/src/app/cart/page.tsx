@@ -1,10 +1,14 @@
 import CartItem from "@/components/cart/cart-item";
+import CartSummary from "@/components/cart/cart-summary";
 import ClearButton from "@/components/cart/clear-button";
+import EmptyCart from "@/components/cart/empty-cart";
 import { getBasket } from "@/service/basket-service";
 import { FC } from "react";
 
 const Page: FC = async () => {
   const { cart } = await getBasket();
+
+  if (cart.items.length === 0) return <EmptyCart />;
 
   return (
     <div className="page">
@@ -25,6 +29,12 @@ const Page: FC = async () => {
             </ul>
           </div>
         </div>
+
+        {cart.items.length > 0 && (
+          <div className="lg:w-1/3">
+            <CartSummary cart={cart} />
+          </div>
+        )}
       </div>
     </div>
   );

@@ -39,7 +39,7 @@ body {
   }
 
   .counter-button {
-    @apply p-3 text-gray-600 hover:bg-gray-100 overflow-hidden disabled:bg-zinc-100/20;
+    @apply p-3 text-gray-600 hover:bg-gray-100 overflow-hidden disabled:bg-zinc-200/10;
   }
 
   .order-button {

@@ -30,7 +30,26 @@ export interface Basket {
   items: BasketItem[];
 }
 
+export interface Order {
+  _id: string;
+  items: {
+    product: Product;
+    quantity: number;
+    price: number;
+    name: string;
+  }[];
+  total_amount: number;
+  currency: string;
+  customer_id: string;
+  customer_name: string;
+  customer_phone: string;
+  delivery_address: string;
+  is_delivery: boolean;
+  __v: number;
+}
+
 export type ProductsRes = Promise<{ groceries: Product[] }>;
 export type ProductRes = Promise<{ grocery: Product }>;
 export type URLRes = Promise<{ url: string }>;
 export type BasketRes = Promise<{ cart: Basket }>;
+export type OrderRes = Promise<{ orders: Order[] }>;
